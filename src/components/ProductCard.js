@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
                 </ul>
             </div>
             <div className='flex gap-2 mt-5'>
-                {pathname.includes('cart') && <button className='bg-red-500 rounded-full py-1 px-2 flex-1 text-white text-bold'>Remove from cart</button>}
+                {pathname.includes('cart') && <button className='bg-red-500 rounded-full py-1 px-2 flex-1 text-white text-bold' onClick={() => dispatch({ type: actionTypes.REMOVE_FROM_CART, payload: product })}>Remove from cart</button>}
                 {!pathname.includes('cart') && <button className='bg-indigo-500 rounded-full py-1 px-2 flex-1 text-white text-bold' onClick={() => dispatch({ type: actionTypes.ADD_TO_CART, payload: product })}>
                     Add to cart
                 </button>}
